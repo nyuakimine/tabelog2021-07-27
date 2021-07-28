@@ -50,7 +50,7 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
               {/* <a name="photoheader" id="photoheader"></a> */}
               <Sidebar></Sidebar>
               <div id="column-main" className="layout1-main">
-              <TopNotice></TopNotice>
+              <ToTopNoticep1></TopNotice>
               </div>
             </section>
           </div>

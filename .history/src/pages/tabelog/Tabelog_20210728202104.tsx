@@ -7,7 +7,7 @@ import { fetchDetailTitleDataActionCreator } from "../../redux/detailTitle/fetch
 import { fetchRestaurantDescDataActionCreator } from "../../redux/restaurantDesc/restaurantDesc";
 import { fetchGenreAndStationDataActionCreator } from "../../redux/genreAndStation/genreAndStation";
 import {Sidebar} from "./sidebar"
-import {TopNotice} from "./topNotice"
+import {Top1} from "./top"
 import "./tabelog1.css";
 import "./tabelog2.css";
 //import {detailTitleListSlice} from "../../redux/detailTitle/fetchDetailTitleListSlice"
@@ -50,7 +50,7 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
               {/* <a name="photoheader" id="photoheader"></a> */}
               <Sidebar></Sidebar>
               <div id="column-main" className="layout1-main">
-              <TopNotice></TopNotice>
+              <Top1></Top1>
               </div>
             </section>
           </div>

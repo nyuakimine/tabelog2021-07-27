@@ -6,8 +6,6 @@ import { RouteComponentProps, useParams } from "react-router-dom";
 import { fetchDetailTitleDataActionCreator } from "../../redux/detailTitle/fetchDetailTitleListSlice";
 import { fetchRestaurantDescDataActionCreator } from "../../redux/restaurantDesc/restaurantDesc";
 import { fetchGenreAndStationDataActionCreator } from "../../redux/genreAndStation/genreAndStation";
-import {Sidebar} from "./sidebar"
-import {TopNotice} from "./topNotice"
 import "./tabelog1.css";
 import "./tabelog2.css";
 //import {detailTitleListSlice} from "../../redux/detailTitle/fetchDetailTitleListSlice"
@@ -47,11 +45,6 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
               </div>
               <DetailTitle></DetailTitle>
               <RestaurantDesc></RestaurantDesc>
-              {/* <a name="photoheader" id="photoheader"></a> */}
-              <Sidebar></Sidebar>
-              <div id="column-main" className="layout1-main">
-              <TopNotice></TopNotice>
-              </div>
             </section>
           </div>
         </div>

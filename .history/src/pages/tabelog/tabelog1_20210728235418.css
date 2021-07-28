@@ -12300,7 +12300,9 @@ html.is-overlay-visible.is-add-scrollbar-width-20 .rstdtl-sidebar-scroll.is-scro
     height: auto;
     opacity: 1
 }
-
+.showMore{
+    display: inline;
+}
 
 .rstdtl-takeout-info {
     position: relative

@@ -2,26 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { DetailTitle } from "../../components/detailTitle/DetailTitle";
 import { RestaurantDesc } from "../../components/restaurantDesc";
-import { RouteComponentProps, useParams } from "react-router-dom";
-import { fetchDetailTitleDataActionCreator } from "../../redux/detailTitle/fetchDetailTitleListSlice";
-import { fetchRestaurantDescDataActionCreator } from "../../redux/restaurantDesc/restaurantDesc";
-import { fetchGenreAndStationDataActionCreator } from "../../redux/genreAndStation/genreAndStation";
-import {Sidebar} from "./sidebar"
-import {TopNotice} from "./topNotice"
+
 import "./tabelog1.css";
 import "./tabelog2.css";
 //import {detailTitleListSlice} from "../../redux/detailTitle/fetchDetailTitleListSlice"
-interface MatchParams {
-  id: string;
-}
-export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
-  const { id } = useParams<MatchParams>();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchDetailTitleDataActionCreator({ id: id }));
-    dispatch(fetchRestaurantDescDataActionCreator({ id: id }));
-    dispatch(fetchGenreAndStationDataActionCreator({ id: id }));
-  }, []);
+
+export const Sidebar: React.FC = () => {
+
   return (
     <div id="container">
       <div>
@@ -47,11 +34,6 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
               </div>
               <DetailTitle></DetailTitle>
               <RestaurantDesc></RestaurantDesc>
-              {/* <a name="photoheader" id="photoheader"></a> */}
-              <Sidebar></Sidebar>
-              <div id="column-main" className="layout1-main">
-              <TopNotice></TopNotice>
-              </div>
             </section>
           </div>
         </div>
