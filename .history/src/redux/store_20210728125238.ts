@@ -32,6 +32,7 @@ const persistConfig = {
   storage,
   whitelist: ["user"]
 }
+// https://github.com/nyuakimine/crousele
 const rootReducer = combineReducers({
     language: languageReducer,
     recommendProducts: recommendProductsReducer,

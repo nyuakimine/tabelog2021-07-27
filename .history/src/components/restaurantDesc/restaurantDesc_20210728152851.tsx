@@ -9,12 +9,8 @@ import { Genre2 } from "./genre2";
 import { Genre3 } from "./genre3";
 
 export const RestaurantDesc: React.FC = () => {
-  const restaurantDesc = useSelector(
-    (state: RootState) => state.restaurantDescSlice.data
-  );
-  const genreAndStation = useSelector(
-    (state: RootState) => state.genreAndStationSlice.data
-  );
+  const restaurantDesc = useSelector((state: RootState) => state.restaurantDescSlice.data);
+  const genreAndStation = useSelector((state: RootState) => state.genreAndStationSlice.data);
 
   let genreName1;
   let genreName2;
@@ -116,9 +112,7 @@ export const RestaurantDesc: React.FC = () => {
                 <div className="c-balloon c-balloon--top linktree__childbaloon">
                   <ul className="linktree__childlist">
                     <li className="linktree__childlist-item">
-                      <a href="https://tabelog.com/tokyo/rstLst/RC040101/">
-                        東京×韓国料理
-                      </a>
+                      <a href="https://tabelog.com/tokyo/rstLst/RC040101/">東京×韓国料理</a>
                     </li>
                     <li className="linktree__childlist-item">
                       <a href="https://tabelog.com/tokyo/rstLst/yakiniku/">東京×焼肉</a>
@@ -212,10 +206,7 @@ export const RestaurantDesc: React.FC = () => {
                 onMouseOut={onMouseOutHandler}
               >
                 <div className="linktree__parent">
-                  <a
-                    href="https://tabelog.com/rstLst/izakaya/"
-                    className="linktree__parent-target"
-                  >
+                  <a href="https://tabelog.com/rstLst/izakaya/" className="linktree__parent-target">
                     <span className="linktree__parent-target-text">{genreName3}</span>
                   </a>
                 </div>

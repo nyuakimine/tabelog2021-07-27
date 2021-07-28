@@ -9,12 +9,8 @@ import { Genre2 } from "./genre2";
 import { Genre3 } from "./genre3";
 
 export const RestaurantDesc: React.FC = () => {
-  const restaurantDesc = useSelector(
-    (state: RootState) => state.restaurantDescSlice.data
-  );
-  const genreAndStation = useSelector(
-    (state: RootState) => state.genreAndStationSlice.data
-  );
+  const restaurantDesc = useSelector((state: RootState) => state.restaurantDescSlice.data);
+  const genreAndStation = useSelector((state: RootState) => state.genreAndStationSlice.data);
 
   let genreName1;
   let genreName2;
@@ -37,10 +33,7 @@ export const RestaurantDesc: React.FC = () => {
     const sortList = document.getElementsByClassName("linktree")[0] as HTMLElement;
     const sLTop = sortList.getBoundingClientRect().top;
     const targetTop = e.currentTarget.getBoundingClientRect().bottom;
-    let itemList = Array.prototype.filter.call(
-      e.currentTarget.childNodes,
-      (node) => node.className === "linktree__childbox"
-    )[0] as HTMLElement;
+    let itemList = Array.prototype.filter.call(e.currentTarget.childNodes, (node) => node.className === "linktree__childbox")[0] as HTMLElement;
     itemList.style.display = "block";
     itemList.style.top = targetTop - sLTop + "px";
     itemList.style.position = "absolute";
@@ -49,10 +42,7 @@ export const RestaurantDesc: React.FC = () => {
   const onMouseOutHandler = (e) => {
     console.log(e.currentTarget);
     //debugger;
-    let itemList = Array.prototype.filter.call(
-      e.currentTarget.childNodes,
-      (node) => node.className === "linktree__childbox"
-    )[0] as HTMLElement;
+    let itemList = Array.prototype.filter.call(e.currentTarget.childNodes, (node) => node.className === "linktree__childbox")[0] as HTMLElement;
     itemList.style.display = "none";
   };
 
@@ -67,13 +57,8 @@ export const RestaurantDesc: React.FC = () => {
             <dd className="rdheader-subinfo__item-text">
               <div className="linktree">
                 <div className="linktree__parent">
-                  <a
-                    href="https://tabelog.com/tokyo/A1302/A130201/R6586/rstLst/"
-                    className="linktree__parent-target"
-                  >
-                    <span className="linktree__parent-target-text">
-                      {restaurantDesc[0].nearbyStation}
-                    </span>
+                  <a href="https://tabelog.com/tokyo/A1302/A130201/R6586/rstLst/" className="linktree__parent-target">
+                    <span className="linktree__parent-target-text">{restaurantDesc[0].nearbyStation}</span>
                   </a>
                 </div>
                 <div className="linktree__childbox">
@@ -116,9 +101,7 @@ export const RestaurantDesc: React.FC = () => {
                 <div className="c-balloon c-balloon--top linktree__childbaloon">
                   <ul className="linktree__childlist">
                     <li className="linktree__childlist-item">
-                      <a href="https://tabelog.com/tokyo/rstLst/RC040101/">
-                        東京×韓国料理
-                      </a>
+                      <a href="https://tabelog.com/tokyo/rstLst/RC040101/">東京×韓国料理</a>
                     </li>
                     <li className="linktree__childlist-item">
                       <a href="https://tabelog.com/tokyo/rstLst/yakiniku/">東京×焼肉</a>
@@ -134,16 +117,9 @@ export const RestaurantDesc: React.FC = () => {
           <dl className="rdheader-subinfo__item">
             <dt className="rdheader-subinfo__item-title">ジャンル：</dt>
             <dd className="rdheader-subinfo__item-text">
-              <div
-                className="linktree"
-                onMouseOver={onMouseOverHandler}
-                onMouseOut={onMouseOutHandler}
-              >
+              <div className="linktree" onMouseOver={onMouseOverHandler} onMouseOut={onMouseOutHandler}>
                 <div className="linktree__parent">
-                  <a
-                    href="https://tabelog.com/rstLst/RC040101/"
-                    className="linktree__parent-target"
-                  >
+                  <a href="https://tabelog.com/rstLst/RC040101/" className="linktree__parent-target">
                     <span className="linktree__parent-target-text">{genreName1}</span>
                   </a>
                 </div>
@@ -170,16 +146,9 @@ export const RestaurantDesc: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="linktree"
-                onMouseOver={onMouseOverHandler}
-                onMouseOut={onMouseOutHandler}
-              >
+              <div className="linktree" onMouseOver={onMouseOverHandler} onMouseOut={onMouseOutHandler}>
                 <div className="linktree__parent">
-                  <a
-                    href="https://tabelog.com/rstLst/yakiniku/"
-                    className="linktree__parent-target"
-                  >
+                  <a href="https://tabelog.com/rstLst/yakiniku/" className="linktree__parent-target">
                     <span className="linktree__parent-target-text">{genreName2}</span>
                   </a>
                 </div>
@@ -206,16 +175,9 @@ export const RestaurantDesc: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="linktree"
-                onMouseOver={onMouseOverHandler}
-                onMouseOut={onMouseOutHandler}
-              >
+              <div className="linktree" onMouseOver={onMouseOverHandler} onMouseOut={onMouseOutHandler}>
                 <div className="linktree__parent">
-                  <a
-                    href="https://tabelog.com/rstLst/izakaya/"
-                    className="linktree__parent-target"
-                  >
+                  <a href="https://tabelog.com/rstLst/izakaya/" className="linktree__parent-target">
                     <span className="linktree__parent-target-text">{genreName3}</span>
                   </a>
                 </div>
@@ -253,10 +215,7 @@ export const RestaurantDesc: React.FC = () => {
                 <p className="rdheader-budget__icon rdheader-budget__icon--dinner">
                   <i>夜の予算</i>
                   <span className="rdheader-budget__price">
-                    <a
-                      href="https://tabelog.com/tokyo/A1302/A130201/13019285/dtlratings/#price-range"
-                      className="rdheader-budget__price-target"
-                    >
+                    <a href="https://tabelog.com/tokyo/A1302/A130201/13019285/dtlratings/#price-range" className="rdheader-budget__price-target">
                       {restaurantDesc[0].nightBudget}
                     </a>
                   </span>
@@ -264,10 +223,7 @@ export const RestaurantDesc: React.FC = () => {
                 <p className="rdheader-budget__icon rdheader-budget__icon--lunch">
                   <i>昼の予算</i>
                   <span className="rdheader-budget__price">
-                    <a
-                      href="https://tabelog.com/tokyo/A1302/A130201/13019285/dtlratings/#price-range"
-                      className="rdheader-budget__price-target"
-                    >
+                    <a href="https://tabelog.com/tokyo/A1302/A130201/13019285/dtlratings/#price-range" className="rdheader-budget__price-target">
                       {restaurantDesc[0].dayBudget}
                     </a>
                   </span>

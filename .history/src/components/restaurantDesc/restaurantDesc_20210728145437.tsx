@@ -4,9 +4,7 @@ import { fetchDetailTitleDataActionCreator } from "../../redux/detailTitle/fetch
 import "../../pages/tabelog/tabelog1.css";
 import "../../pages/tabelog/tabelog2.css";
 import { RootState } from "../../redux/store";
-import { Genre1 } from "./genre1";
-import { Genre2 } from "./genre2";
-import { Genre3 } from "./genre3";
+import {Genre1} from "./genre1"
 
 export const RestaurantDesc: React.FC = () => {
   const restaurantDesc = useSelector(
@@ -15,26 +13,19 @@ export const RestaurantDesc: React.FC = () => {
   const genreAndStation = useSelector(
     (state: RootState) => state.genreAndStationSlice.data
   );
+if( genreAndStation.stationId===1　&&　genreAndStation.genreId===1){
+ let name1=genreAndStation.genreName
+}
 
-  let genreName1;
-  let genreName2;
-  let genreName3;
-  if (genreAndStation != null) {
-    for (let i = 0; i < genreAndStation.length; i++) {
-      if (genreAndStation[i].genreId === 1) {
-        genreName1 = genreAndStation[i].genreName;
-      } else if (genreAndStation[i].genreId === 2) {
-        genreName2 = genreAndStation[i].genreName;
-      } else if (genreAndStation[i].genreId === 3) {
-        genreName3 = genreAndStation[i].genreName;
-      }
-    }
-  }
+
 
   const onMouseOverHandler = (e) => {
+    //debugger;
     console.log(e.currentTarget);
 
-    const sortList = document.getElementsByClassName("linktree")[0] as HTMLElement;
+    const sortList = document.getElementsByClassName(
+      "linktree"
+    )[0] as HTMLElement;
     const sLTop = sortList.getBoundingClientRect().top;
     const targetTop = e.currentTarget.getBoundingClientRect().bottom;
     let itemList = Array.prototype.filter.call(
@@ -53,7 +44,7 @@ export const RestaurantDesc: React.FC = () => {
       e.currentTarget.childNodes,
       (node) => node.className === "linktree__childbox"
     )[0] as HTMLElement;
-    itemList.style.display = "none";
+    itemList.style.display = "block";
   };
 
   return restaurantDesc === null ? (
@@ -65,7 +56,10 @@ export const RestaurantDesc: React.FC = () => {
           <dl className="rdheader-subinfo__item rdheader-subinfo__item--station">
             <dt className="rdheader-subinfo__item-title">最寄り駅：</dt>
             <dd className="rdheader-subinfo__item-text">
-              <div className="linktree">
+              <div
+                className="linktree"
+               
+              >
                 <div className="linktree__parent">
                   <a
                     href="https://tabelog.com/tokyo/A1302/A130201/R6586/rstLst/"
@@ -78,6 +72,7 @@ export const RestaurantDesc: React.FC = () => {
                 </div>
                 <div className="linktree__childbox">
                   <div className="c-balloon c-balloon--top linktree__childbaloon">
+                    
                     {/* <ul className="linktree__childlist">
                     {genreAndStation.map((genre1, idx) => {
                       <li className="linktree__childlist-item" key={idx}>
@@ -87,7 +82,7 @@ export const RestaurantDesc: React.FC = () => {
                       </li>
                        })}
                         {/* 東京駅×韓国料理 */}
-                    {/* <li className="linktree__childlist-item">
+                      {/* <li className="linktree__childlist-item">
                         <a href="https://tabelog.com/tokyo/A1302/A130201/R6586/rstLst/yakiniku/">
                           東京駅×焼肉
                         </a>
@@ -97,17 +92,24 @@ export const RestaurantDesc: React.FC = () => {
                           東京駅×居酒屋
                         </a>
                       </li> */}
-                    {/* </ul> */}
+                    {/* </ul> */} 
                   </div>
+                  
                 </div>
               </div>
             </dd>
           </dl>
           <div className="rdheader-subinfo__item">
-            <div className="linktree">
+            <div
+              className="linktree"
+            
+            >
               <div className="linktree__parent">
                 [
-                <a href="https://tabelog.com/tokyo/" className="linktree__parent-target">
+                <a
+                  href="https://tabelog.com/tokyo/"
+                  className="linktree__parent-target"
+                >
                   <span className="linktree__parent-target-text">東京</span>
                 </a>
                 ]
@@ -121,10 +123,14 @@ export const RestaurantDesc: React.FC = () => {
                       </a>
                     </li>
                     <li className="linktree__childlist-item">
-                      <a href="https://tabelog.com/tokyo/rstLst/yakiniku/">東京×焼肉</a>
+                      <a href="https://tabelog.com/tokyo/rstLst/yakiniku/">
+                        東京×焼肉
+                      </a>
                     </li>
                     <li className="linktree__childlist-item">
-                      <a href="https://tabelog.com/tokyo/rstLst/izakaya/">東京×居酒屋</a>
+                      <a href="https://tabelog.com/tokyo/rstLst/izakaya/">
+                        東京×居酒屋
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -144,12 +150,16 @@ export const RestaurantDesc: React.FC = () => {
                     href="https://tabelog.com/rstLst/RC040101/"
                     className="linktree__parent-target"
                   >
-                    <span className="linktree__parent-target-text">{genreName1}</span>
+                    <span className="linktree__parent-target-text">
+
+                      {name1}
+
+                    </span>
                   </a>
                 </div>
                 <div className="linktree__childbox">
                   <div className="c-balloon c-balloon--top linktree__childbaloon">
-                    <Genre1></Genre1>
+                  <Genre1></Genre1>
                     {/* <ul className="linktree__childlist">
                       <li className="linktree__childlist-item">
                         <a href="https://tabelog.com/tokyo/A1302/A130201/rstLst/RC040101/">
@@ -180,13 +190,12 @@ export const RestaurantDesc: React.FC = () => {
                     href="https://tabelog.com/rstLst/yakiniku/"
                     className="linktree__parent-target"
                   >
-                    <span className="linktree__parent-target-text">{genreName2}</span>
+                    <span className="linktree__parent-target-text">焼肉</span>
                   </a>
                 </div>
                 <div className="linktree__childbox">
                   <div className="c-balloon c-balloon--top linktree__childbaloon">
-                    <Genre2></Genre2>
-                    {/* <ul className="linktree__childlist">
+                    <ul className="linktree__childlist">
                       <li className="linktree__childlist-item">
                         <a href="https://tabelog.com/tokyo/A1302/A130201/rstLst/yakiniku/">
                           焼肉×丸の内・大手町
@@ -202,7 +211,7 @@ export const RestaurantDesc: React.FC = () => {
                           焼肉×東京
                         </a>
                       </li>
-                    </ul> */}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -216,13 +225,12 @@ export const RestaurantDesc: React.FC = () => {
                     href="https://tabelog.com/rstLst/izakaya/"
                     className="linktree__parent-target"
                   >
-                    <span className="linktree__parent-target-text">{genreName3}</span>
+                    <span className="linktree__parent-target-text">居酒屋</span>
                   </a>
                 </div>
                 <div className="linktree__childbox">
                   <div className="c-balloon c-balloon--top linktree__childbaloon">
-                    <Genre3></Genre3>
-                    {/* <ul className="linktree__childlist">
+                    <ul className="linktree__childlist">
                       <li className="linktree__childlist-item">
                         <a href="https://tabelog.com/tokyo/A1302/A130201/rstLst/izakaya/">
                           居酒屋×丸の内・大手町
@@ -238,7 +246,7 @@ export const RestaurantDesc: React.FC = () => {
                           居酒屋×東京
                         </a>
                       </li>
-                    </ul> */}
+                    </ul>
                   </div>
                 </div>
               </div>
