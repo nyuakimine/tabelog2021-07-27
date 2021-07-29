@@ -27,6 +27,9 @@ import {newBeeMallHelpNumSlice} from './reviewHelpNumSlice/reviewHelpNumSlice'
 import {tabelogDetailTitleSlice} from './detailTitle/fetchDetailTitleListSlice'
 import {tabelogRestaurantDescSlice} from './restaurantDesc/restaurantDesc'
 import {tabelogGenreAndStationSlice} from './genreAndStation/genreAndStation'
+import {topImgSlice} from '../pages/tabelog/top/imgSlice'
+import {tabelogTopNoticeCommentSlice} from '../redux/topNoticeComment/topNoticeComment'
+import {tabelogTopImgSlice} from '../redux/topImg/topImg'
 const persistConfig = {
   key: "root",
   storage,
@@ -56,6 +59,9 @@ const rootReducer = combineReducers({
     detailTitleListSlice: tabelogDetailTitleSlice.reducer,
     restaurantDescSlice: tabelogRestaurantDescSlice.reducer,
     genreAndStationSlice: tabelogGenreAndStationSlice.reducer,
+    topImg: topImgSlice.reducer,
+    topImgSlice: tabelogTopImgSlice.reducer,
+    topNoticeCommentSlice: tabelogTopNoticeCommentSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
