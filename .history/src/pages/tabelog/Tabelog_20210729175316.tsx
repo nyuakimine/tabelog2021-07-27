@@ -22,7 +22,7 @@ interface MatchParams {
 }
 export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
 
-  const topImg = useSelector((state: RootState) => state.topImgSlice.data.data);
+  const topImg = useSelector((state: RootState) => state.topNoticeCommentSlice.data.data);
   const { id } = useParams<MatchParams>();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,7 +32,7 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
     dispatch(fetchTopNoticeCommentDataActionCreator({ id: id }));
     dispatch(fetchTopImgDataActionCreator({ id: id }));
   }, []);
-  return topImg === null ? (
+  return topImg === undefined ? (
     <h2>loading...</h2>
   ) :  (
     <div id="container">

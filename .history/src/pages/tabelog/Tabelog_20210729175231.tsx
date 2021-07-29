@@ -22,7 +22,7 @@ interface MatchParams {
 }
 export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
 
-  const topImg = useSelector((state: RootState) => state.topImgSlice.data.data);
+  const topImg = useSelector((state: RootState) => state.topNoticeCommentSlice.data.data);
   const { id } = useParams<MatchParams>();
   const dispatch = useDispatch();
   useEffect(() => {

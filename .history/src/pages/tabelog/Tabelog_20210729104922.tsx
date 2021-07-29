@@ -6,14 +6,10 @@ import { RouteComponentProps, useParams } from "react-router-dom";
 import { fetchDetailTitleDataActionCreator } from "../../redux/detailTitle/fetchDetailTitleListSlice";
 import { fetchRestaurantDescDataActionCreator } from "../../redux/restaurantDesc/restaurantDesc";
 import { fetchGenreAndStationDataActionCreator } from "../../redux/genreAndStation/genreAndStation";
-import {fetchTopNoticeCommentDataActionCreator} from "../../redux/topNoticeComment/topNoticeComment"
-import {fetchTopImgDataActionCreator} from "../../redux/topImg/topImg"
 import {Sidebar} from "./sidebar"
 import {TopNotice} from "./top/topNotice";
 import {TopImg} from "./top/img"
 import {TopCommentWrap} from "./top/topCommentWrap"
-//import {topImg} from "./top/img"
-import { RootState } from "../../redux/store";
 import "./tabelog1.css";
 import "./tabelog2.css";
 //import {detailTitleListSlice} from "../../redux/detailTitle/fetchDetailTitleListSlice"
@@ -21,20 +17,14 @@ interface MatchParams {
   id: string;
 }
 export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
-
-  const topImg = useSelector((state: RootState) => state.topImgSlice.data.data);
   const { id } = useParams<MatchParams>();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDetailTitleDataActionCreator({ id: id }));
     dispatch(fetchRestaurantDescDataActionCreator({ id: id }));
     dispatch(fetchGenreAndStationDataActionCreator({ id: id }));
-    dispatch(fetchTopNoticeCommentDataActionCreator({ id: id }));
-    dispatch(fetchTopImgDataActionCreator({ id: id }));
   }, []);
-  return topImg === null ? (
-    <h2>loading...</h2>
-  ) :  (
+  return (
     <div id="container">
       <div>
         <div id="rstdtl-head" className="rstdtl-header-wrap">
@@ -64,7 +54,7 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
               <div id="column-main" className="layout1-main">
               <TopNotice></TopNotice>
               <span id="shoppr" className="page-link"></span>
-              <TopImg data={topImg}></TopImg>
+              <TopImg></TopImg>
               <TopCommentWrap></TopCommentWrap>
               </div>
             </section>

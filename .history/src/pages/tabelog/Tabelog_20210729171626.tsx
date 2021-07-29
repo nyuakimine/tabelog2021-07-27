@@ -12,8 +12,7 @@ import {Sidebar} from "./sidebar"
 import {TopNotice} from "./top/topNotice";
 import {TopImg} from "./top/img"
 import {TopCommentWrap} from "./top/topCommentWrap"
-//import {topImg} from "./top/img"
-import { RootState } from "../../redux/store";
+import {topImg} from "./top/img"
 import "./tabelog1.css";
 import "./tabelog2.css";
 //import {detailTitleListSlice} from "../../redux/detailTitle/fetchDetailTitleListSlice"
@@ -22,7 +21,7 @@ interface MatchParams {
 }
 export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
 
-  const topImg = useSelector((state: RootState) => state.topImgSlice.data.data);
+  const topImg = useSelector((state: RootState) => state.topNoticeCommentSlice.data.data);
   const { id } = useParams<MatchParams>();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,9 +31,7 @@ export const Tabelog: React.FC<RouteComponentProps<MatchParams>> = () => {
     dispatch(fetchTopNoticeCommentDataActionCreator({ id: id }));
     dispatch(fetchTopImgDataActionCreator({ id: id }));
   }, []);
-  return topImg === null ? (
-    <h2>loading...</h2>
-  ) :  (
+  return (
     <div id="container">
       <div>
         <div id="rstdtl-head" className="rstdtl-header-wrap">

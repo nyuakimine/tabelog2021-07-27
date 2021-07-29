@@ -1,0 +1,28 @@
+.bx-wrapper {
+  max-width: 100%;
+}
+.bx-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 370px;
+}
+.js-mainphoto-slider p-main-photos__slider{
+  width: auto;
+  position: relative;
+}
+.p-main-photos__slider-item js-mainphoto-box {
+  float: none;
+  list-style: none;
+  position: absolute;
+  width: 660px;
+  z-index: 0;
+  display: none;
+}
+#p-main-photos-nnnnn {
+  float: none;
+  list-style: none;
+  position: absolute;
+  width: 660px;
+  z-index: 50;
+}
